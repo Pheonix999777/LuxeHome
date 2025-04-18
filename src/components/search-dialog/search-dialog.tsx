@@ -9,6 +9,7 @@ import { X, SearchIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { getAllProducts } from "@/lib/data";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SearchDialogProps {
   isOpen: boolean;
@@ -103,9 +104,10 @@ export function SearchDialog({ isOpen, onClose }: SearchDialogProps) {
                       onClick={handleProductClick}
                     >
                       <div className="h-12 w-12 overflow-hidden rounded-md border">
-                        <img
+                        <Image
                           src={product.image || "/placeholder.svg"}
                           alt={product.name}
+                          width={400}
                           className="h-full w-full object-cover"
                         />
                       </div>

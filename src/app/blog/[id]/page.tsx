@@ -72,10 +72,11 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
 
           <div className="flex items-center space-x-4">
             <div className="relative w-10 h-10 rounded-full overflow-hidden">
-              <img
+              <Image
                 src={
                   post.author.avatar || "/placeholder.svg?height=40&width=40"
                 }
+                fill
                 alt={post.author.name}
                 className="object-cover w-full h-full"
               />
@@ -110,11 +111,12 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
               <h3 className="font-medium">About the author</h3>
               <div className="flex items-center space-x-4 mt-4">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden">
-                  <img
+                  <Image
                     src={
                       post.author.avatar ||
                       "/placeholder.svg?height=64&width=64"
                     }
+                    fill
                     alt={post.author.name}
                     className="object-cover w-full h-full"
                   />

@@ -51,9 +51,10 @@ export function BlogCard({
         <p className="text-neutral-600 mb-4 line-clamp-3">{excerpt}</p>
         <div className="flex items-center">
           <div className="relative w-8 h-8 rounded-full overflow-hidden mr-3">
-            <img
+            <Image
               src={author.avatar || "/placeholder.svg?height=32&width=32"}
               alt={author.name}
+              fill
               className="object-cover w-full h-full"
             />
           </div>
