@@ -1,103 +1,213 @@
+import { Button } from "@/components/ui/button";
+import { ProductCard } from "@/components/product-card/product-card";
+import { TestimonialCard } from "@/components/testimonial-card/testimonial-card";
+import { CategoryCard } from "@/components/category-card/category-card";
+import { Newsletter } from "@/components/newsletter/newsletter";
+import {
+  getFeaturedProducts,
+  getCategories,
+  getTestimonials,
+} from "@/lib/data";
+import Link from "next/link";
+import { ArrowRight, TrendingUp, Truck, RotateCcw, Clock } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
+import HeroImage from "../../public/img/Hero Image 17_27_46.png";
+
+export const metadata: Metadata = {
+  title: "LuxeHome - Premium Furniture for Modern Living",
+  description:
+    "Discover our curated collection of premium furniture for every room. Modern designs, exceptional quality, and timeless elegance.",
+  openGraph: {
+    title: "LuxeHome - Premium Furniture for Modern Living",
+    description:
+      "Discover our curated collection of premium furniture for every room. Modern designs, exceptional quality, and timeless elegance.",
+    url: "https://luxehome-furniture.com",
+    siteName: "LuxeHome Furniture",
+    images: [
+      {
+        url: "https://luxehome-furniture.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "LuxeHome Furniture",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const featuredProducts = getFeaturedProducts();
+  const categories = getCategories();
+  const testimonials = getTestimonials();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  return (
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="relative bg-neutral-100">
+          <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 lg:py-32">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <div className="space-y-4">
+                <div className="inline-block rounded-lg bg-neutral-200 px-3 py-1 text-sm">
+                  New Collection 2025
+                </div>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+                  Elevate Your Living Space with Timeless Elegance
+                </h1>
+                <p className="text-neutral-600 md:text-xl max-w-[600px]">
+                  Discover furniture that combines exceptional craftsmanship,
+                  sustainable materials, and designs that stand the test of
+                  time.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <Button asChild size="lg">
+                    <Link href="/collections">
+                      Shop Collection <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg">
+                    <Link href="/about">Learn Our Story</Link>
+                  </Button>
+                </div>
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image
+                  src={HeroImage}
+                  alt="Modern living room with elegant furniture"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Categories Section */}
+        <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+                Shop by Room
+              </h2>
+              <p className="text-neutral-600 md:text-xl max-w-3xl">
+                Explore our curated collections designed to transform every
+                space in your home.
+              </p>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {categories.map((category) => (
+                <CategoryCard
+                  key={category.id}
+                  title={category.name}
+                  image={category.image}
+                  href={`/collections/${category.slug}`}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Products Section */}
+        <section className="py-16 md:py-24 bg-neutral-50">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+                Featured Products
+              </h2>
+              <p className="text-neutral-600 md:text-xl max-w-3xl">
+                Our most popular pieces, loved for their exceptional design and
+                quality.
+              </p>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {featuredProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  price={product.price}
+                  image={product.image}
+                  category={product.category}
+                  rating={product.rating}
+                />
+              ))}
+            </div>
+            <div className="flex justify-center mt-12">
+              <Button asChild size="lg">
+                <Link href="/collections">View All Products</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="p-3 rounded-full bg-neutral-100">
+                  <Truck className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold">Free Shipping</h3>
+                <p className="text-neutral-600">On all orders over $1000</p>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="p-3 rounded-full bg-neutral-100">
+                  <RotateCcw className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold">Easy Returns</h3>
+                <p className="text-neutral-600">30-day return policy</p>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="p-3 rounded-full bg-neutral-100">
+                  <TrendingUp className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold">Quality Guarantee</h3>
+                <p className="text-neutral-600">
+                  5-year warranty on all products
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="p-3 rounded-full bg-neutral-100">
+                  <Clock className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold">Expert Support</h3>
+                <p className="text-neutral-600">Available 7 days a week</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-16 md:py-24 bg-neutral-50">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+                What Our Customers Say
+              </h2>
+              <p className="text-neutral-600 md:text-xl max-w-3xl">
+                Don&apos;t just take our word for it. Hear from our satisfied
+                customers.
+              </p>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {testimonials.map((testimonial) => (
+                <TestimonialCard
+                  key={testimonial.id}
+                  quote={testimonial.quote}
+                  name={testimonial.name}
+                  location={testimonial.location}
+                  rating={testimonial.rating}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <Newsletter />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
