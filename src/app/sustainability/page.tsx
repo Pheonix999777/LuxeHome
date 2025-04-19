@@ -152,9 +152,10 @@ export default function SustainabilityPage() {
                 </ul>
               </div>
               <div className="order-1 md:order-2 aspect-video overflow-hidden rounded-lg">
-                <img
+                <Image
                   src="/placeholder.svg?height=400&width=600"
                   alt="Reforestation efforts"
+                  fill
                   className="object-cover w-full h-full"
                 />
               </div>
@@ -162,9 +163,10 @@ export default function SustainabilityPage() {
 
             <div className="grid md:grid-cols-2 gap-6 items-center">
               <div className="aspect-video overflow-hidden rounded-lg">
-                <img
+                <Image
                   src="/placeholder.svg?height=400&width=600"
                   alt="Solar panels on manufacturing facility"
+                  fill
                   className="object-cover w-full h-full"
                 />
               </div>
@@ -222,9 +224,10 @@ export default function SustainabilityPage() {
                 </ul>
               </div>
               <div className="order-1 md:order-2 aspect-video overflow-hidden rounded-lg">
-                <img
+                <Image
                   src="/placeholder.svg?height=400&width=600"
                   alt="Circular design process"
+                  fill
                   className="object-cover w-full h-full"
                 />
               </div>
