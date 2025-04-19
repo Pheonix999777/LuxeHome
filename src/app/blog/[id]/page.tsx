@@ -11,7 +11,7 @@ export async function generateMetadata({
 }: {
   params: { id: string };
 }): Promise<Metadata> {
-  const post = getBlogPostById(params.id);
+  const post = await getBlogPostById(params.id);
 
   if (!post) {
     return {
