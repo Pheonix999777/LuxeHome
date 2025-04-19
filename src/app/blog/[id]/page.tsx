@@ -1,44 +1,9 @@
 import { getBlogPostById, getRelatedBlogPosts } from "@/lib/data";
 import { BlogCard } from "@/components/blog-card/blog-card";
 import { formatDate } from "@/lib/utils";
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
-  const post = await getBlogPostById(params.id);
-
-  if (!post) {
-    return {
-      title: "Post Not Found",
-    };
-  }
-
-  return {
-    title: `${post.title} | LuxeHome Blog`,
-    description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: "article",
-      publishedTime: post.date,
-      authors: [post.author.name],
-      images: [
-        {
-          url: typeof post.image === "string" ? post.image : post.image.src,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
-    },
-  };
-}
 
 export default function BlogPostPage({ params }: { params: { id: string } }) {
   const post = getBlogPostById(params.id);
