@@ -11,8 +11,7 @@ export async function generateMetadata({
 }: {
   params: { id: string };
 }): Promise<Metadata> {
-  // Ensure the function is properly awaited
-  const post = await getBlogPostById(params.id);
+  const post = getBlogPostById(params.id);
 
   if (!post) {
     return {
