@@ -2,7 +2,6 @@ import type React from "react";
 import "@/app/globals.css";
 import { Header } from "@/components/header/header";
 import { Footer } from "@/components/footer/footer";
-// import { ThemeProvider } from "@/components/ThemeProvider/ThemeProvider";
 import { CartProvider } from "@/lib/context/cart-context";
 import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
@@ -67,14 +66,13 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} font-sans min-h-screen flex flex-col`}
       >
-        {/* <ThemeProvider attribute="class" defaultTheme="light"> */}
         <CartProvider>
           <Header />
           {children}
           <Footer />
           <Toaster />
         </CartProvider>
-        {/* </ThemeProvider> */}
+
         <Script id="schema-org" type="application/ld+json">
           {`
             {

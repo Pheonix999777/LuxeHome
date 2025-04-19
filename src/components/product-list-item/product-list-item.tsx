@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Button } from "../ui/button";
 interface Product {
   id: string;
   name: string;
   price: number;
   oldPrice?: number;
-  image: string;
+  image: StaticImageData;
   category: string;
   categorySlug: string;
   rating: number;

@@ -17,6 +17,7 @@ import TipsForCreating from "../../public/img/5 Tips for Creating a Productive H
 import TheArtMixing from "../../public/img/The Art of Mixing Wood Tones in Interior Design (1).jpg";
 import SustainableFurniture from "../../public/img/Sustainable Furniture.jpg";
 import SmallSpaceSolutions from "../../public/img/Small Space Solutions.jpg";
+import type { Product } from "@/types/product";
 
 // Categories
 export function getCategories() {
@@ -57,7 +58,7 @@ export function getCategoryBySlug(slug: string) {
 }
 
 // Products
-export function getAllProducts() {
+export function getAllProducts(): Product[] {
   return [
     {
       id: "1",

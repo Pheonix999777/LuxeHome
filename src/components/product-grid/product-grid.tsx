@@ -6,20 +6,22 @@ import { Button } from "@/components/ui/button";
 import { Grid, List } from "lucide-react";
 import type { FilterOptions } from "@/components/filter-sidebar/filter-sidebar";
 import { ProductListItem } from "../product-list-item/product-list-item";
+import { StaticImageData } from "next/image";
 
-interface Product {
+export type Product = {
   id: string;
   name: string;
   price: number;
-  oldPrice?: number;
-  image: string;
+  oldPrice?: number; // Add this line
+  image: StaticImageData;
   category: string;
   categorySlug: string;
   rating: number;
   reviewCount?: number;
   colors?: string[];
   materials?: string[];
-}
+  description?: string;
+};
 
 interface ProductGridProps {
   products: Product[];
@@ -31,7 +33,6 @@ export function ProductGrid({ products, filters }: ProductGridProps) {
   const [sortBy, setSortBy] = useState("featured");
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
 
-  // Apply filters when they change
   useEffect(() => {
     if (!filters) {
       setFilteredProducts(products);

@@ -4,11 +4,13 @@ import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { ProductGrid } from "@/components/product-grid/product-grid";
 import { getAllProducts } from "@/lib/data";
+import type { Product } from "@/types/product";
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q") || "";
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
 
   useEffect(() => {
     if (query) {
@@ -17,7 +19,7 @@ export default function SearchPage() {
         (product) =>
           product.name.toLowerCase().includes(query.toLowerCase()) ||
           product.category.toLowerCase().includes(query.toLowerCase()) ||
-          product.description.toLowerCase().includes(query.toLowerCase())
+          product.description.toLowerCase?.().includes(query.toLowerCase())
       );
       setSearchResults(results);
     } else {
