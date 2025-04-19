@@ -57,7 +57,7 @@ export default function ProductPage() {
   };
 
   return (
-    <div className="container px-4 md:px-6 py-12">
+    <div className="container mx-auto px-4 md:px-6 py-12">
       <div className="grid gap-12 md:grid-cols-2">
         <ProductGallery
           images={product.gallery || (allImage ? [allImage.image] : [])}

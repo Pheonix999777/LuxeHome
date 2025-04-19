@@ -13,7 +13,7 @@ export function ProductReviews({ productId }: ProductReviewsProps) {
   const [rating, setRating] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
   const [showReviewForm, setShowReviewForm] = useState(false);
-
+  console.log(productId);
   const reviews = [
     {
       id: "1",

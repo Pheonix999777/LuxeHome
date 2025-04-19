@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { getAllProducts } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
+import type { Product } from "@/types/product";
 
 interface SearchDialogProps {
   isOpen: boolean;
@@ -18,7 +19,7 @@ interface SearchDialogProps {
 
 export function SearchDialog({ isOpen, onClose }: SearchDialogProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
   const router = useRouter();
   const allProducts = getAllProducts();
 

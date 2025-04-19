@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const slides = [
   {
@@ -65,9 +66,10 @@ export function Carousel() {
           }`}
         >
           <div className="absolute inset-0 bg-black/50 z-10" />
-          <img
+          <Image
             src={slide.image || "/placeholder.svg"}
             alt={slide.title}
+            fill
             className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 z-20 flex items-center justify-center">
