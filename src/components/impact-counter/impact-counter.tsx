@@ -13,6 +13,8 @@ export function ImpactCounter({ number, label }: ImpactCounterProps) {
   const countedRef = useRef(false);
 
   useEffect(() => {
+    const node = counterRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
@@ -20,11 +22,11 @@ export function ImpactCounter({ number, label }: ImpactCounterProps) {
           countedRef.current = true;
           let start = 0;
           const duration = 2000; // ms
-          const step = Math.ceil(number / (duration / 16)); // 60fps
+          const step = Math.ceil(number / (duration / 16)); // taxminan 60fps
 
           const timer = setInterval(() => {
             start += step;
-            if (start > number) {
+            if (start >= number) {
               setCount(number);
               clearInterval(timer);
             } else {
@@ -36,13 +38,13 @@ export function ImpactCounter({ number, label }: ImpactCounterProps) {
       { threshold: 0.1 }
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
   }, [number]);

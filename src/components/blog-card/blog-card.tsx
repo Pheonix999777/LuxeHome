@@ -3,7 +3,6 @@ import { formatDate } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 
 interface BlogCardProps {
-  id: string;
   title: string;
   excerpt: string;
   date: string;
@@ -16,7 +15,6 @@ interface BlogCardProps {
 }
 
 export function BlogCard({
-  id,
   title,
   excerpt,
   date,
@@ -27,7 +25,7 @@ export function BlogCard({
   return (
     <article className="group overflow-hidden rounded-lg border border-neutral-200 bg-white transition-all hover:shadow-md">
       <Link
-        href={`/blog/${id}`}
+        href={`/blog/`}
         className="relative block aspect-video overflow-hidden"
       >
         <Image
@@ -43,7 +41,7 @@ export function BlogCard({
           <span className="mx-2">•</span>
           <span>{category}</span>
         </div>
-        <Link href={`/blog/${id}`}>
+        <Link href={`/blog/`}>
           <h3 className="text-xl font-bold mb-2 line-clamp-2 group-hover:text-neutral-900">
             {title}
           </h3>

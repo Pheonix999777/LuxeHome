@@ -6,6 +6,7 @@ import { useCart, type CartItem } from "@/lib/context/cart-context";
 import { X, Plus, Minus, ShoppingBag } from "lucide-react";
 import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 export function CartDrawer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -156,9 +157,11 @@ function CartItemComponent({
   return (
     <li className="py-4 flex">
       <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border">
-        <img
+        <Image
           src={item.image || "/placeholder.svg"}
           alt={item.name}
+          width={300}
+          height={300}
           className="h-full w-full object-cover"
         />
       </div>

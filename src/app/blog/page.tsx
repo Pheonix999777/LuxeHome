@@ -28,7 +28,6 @@ export default function BlogPage() {
           {posts.map((post) => (
             <BlogCard
               key={post.id}
-              id={post.id}
               title={post.title}
               excerpt={post.excerpt}
               date={post.date}
