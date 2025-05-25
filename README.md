@@ -40,6 +40,7 @@
 # Clone the repository | Reponi klonlash
 
 git clone github.com/Pheonix999777/LuxeHome.git
+
 cd luxe-home
 
 # Install dependencies | Bog‘liqliklarni o‘rnatish
