@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LuxeHome – Modern Furniture Web Application 🛋️
 
-## Getting Started
+# LuxeHome – Zamonaviy Mebel Veb-Ilovasi 🪑
 
-First, run the development server:
+[LuxeHome](https://luxe-home-9vte.vercel.app) is a modern web application for showcasing luxury furniture and career opportunities.  
+**LuxeHome** — bu zamonaviy mebellarni va ish imkoniyatlarini namoyish etuvchi veb-ilova.
 
-```bash
+---
+
+## 🔧 Technologies Used | Foydalanilgan Texnologiyalar
+
+- **Next.js (App Router)** – SEO-friendly and supports server-side rendering.  
+  **Next.js (App Router)** – SEOga mos va serverda ishlovchi React freymvork.
+- **TypeScript** – Provides type safety for better scalability.  
+  **TypeScript** – Yirik loyihalarda xatolikni kamaytirish uchun tur xavfsizligi.
+- **Tailwind CSS** – Utility-first CSS framework for fast styling.  
+  **Tailwind CSS** – Tez va samarali UI yaratish uchun utility-first framework.
+- **shadcn/ui** – Prebuilt accessible UI components using Tailwind CSS.  
+  **shadcn/ui** – Tailwind asosida qurilgan zamonaviy va qulay komponentlar.
+- **lucide-react** – Clean and lightweight icon library.  
+  **lucide-react** – Yengil va chiroyli ikonlar to‘plami.
+- **react-hot-toast** – Beautiful and customizable toast notifications.  
+  **react-hot-toast** – Toast orqali foydalanuvchiga bildirishlar ko‘rsatish.
+
+---
+
+## 🖼️ Features | Ilova Imkoniyatlari
+
+- ✨ **Responsive Homepage** with sleek design  
+  ✨ **Asosiy sahifa** chiroyli va moslashuvchan dizaynga ega
+- 🧭 **Responsive Design** for all screen sizes  
+  🧭 Har qanday ekran o‘lchamida moslashuvchanlik
+- 👥 **Careers Page** with jobs, values, and application form  
+  👥 **Careers sahifasi** ish o‘rinlari, qadriyatlar va ariza shakli bilan
+- 📄 **Modular Components** for clean code structure  
+  📄 **Komponentlarga bo‘lingan tuzilma** – toza va tushunarli kod
+- 🔔 **Toast Notifications** for actions like form submission  
+  🔔 **Toast ogohlantirishlari** – formani yuborish va boshqa holatlar uchun
+
+# Clone the repository | Reponi klonlash
+
+git clone https://github.com/your-username/luxe-home.git
+cd luxe-home
+
+# Install dependencies | Bog‘liqliklarni o‘rnatish
+
+npm install
+
+# Start the development server | Ishga tushurish
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
